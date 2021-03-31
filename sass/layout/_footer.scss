@@ -1,0 +1,152 @@
+.logo-footer {
+  color: var(--primary-white-color);
+}
+
+.footer-adres {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  text-decoration: none;
+
+  color: var(--primary-white-color);
+}
+
+.footer-contacts {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-padding {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #2f303a;
+}
+
+.address-contact {
+  margin-top: 20px;
+}
+
+.address-contact > li + li {
+  margin-top: 9px;
+}
+
+.icon-heading {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer-list > li + li {
+  margin-left: 10px;
+}
+
+.footer-list-icon {
+  fill: #ffffff;
+}
+
+.footer-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+  background-color: var(--secondary-color);
+}
+
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-box-one {
+  margin-right: 70px;
+}
+
+.footer-box-two {
+  margin-right: 93px;
+}
+
+.footer-form-mail {
+  width: 358px;
+  height: 50px;
+  padding-left: 15px;
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.footer-form input::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
+
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-form-button {
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  background-color: var(--secondary-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+
+  letter-spacing: 0.06em;
+  text-align: start;
+  padding-left: 29px;
+
+  color: #ffffff;
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-button:hover,
+.footer-form-button:focus {
+  background-color: #188ce8;
+}
+
+.footer-form-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-form-svg {
+  position: absolute;
+  display: block;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+}
