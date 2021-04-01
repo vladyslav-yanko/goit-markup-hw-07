@@ -1,3 +1,9 @@
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
 }
@@ -17,178 +23,168 @@
   transform: translate(-50%, -50%) scale(1);
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  &__icon--svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__icon:hover > &__icon--svg,
+  &__icon:focus > &__icon--svg {
+    fill: var(--secondary-color);
+  }
+
+  &__h {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: #212121;
+  }
+
+  &__form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.backdrop-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  margin-top: 8px;
-  margin-right: 8px;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-
-.backdrop-icon-svg {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop-icon:hover > .backdrop-icon-svg,
-.backdrop-icon:focus > .backdrop-icon-svg {
-  fill: var(--secondary-color);
-}
-
-.modal-h {
-  display: block;
-  margin-top: 40px;
-  margin-bottom: 12px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
-
-  color: #212121;
-}
-
-textarea {
-  resize: none;
-}
-
-.modal-form {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+.form-comment {
+  margin-bottom: 20px;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-}
 
-.form-field-comment {
-  margin-bottom: 20px;
-}
+  & textarea::placeholder {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
 
-.form-comment {
-  width: 448px;
-  height: 120px;
-  padding: 12px 16px;
-}
+    color: rgba(117, 117, 117, 0.5);
+  }
 
-.form-field textarea::placeholder {
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
+  &__comment {
+    width: 448px;
+    height: 120px;
+    padding: 12px 16px;
+  }
 
-  color: rgba(117, 117, 117, 0.5);
-}
+  &__input {
+    width: 448px;
+    height: 40px;
+    padding-left: 42px;
+  }
 
-.form-input {
-  width: 448px;
-  height: 40px;
-  padding-left: 42px;
-}
+  &__label {
+    margin-bottom: 4px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.16;
 
-.form-label {
-  margin-bottom: 4px;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
+    letter-spacing: 0.01em;
 
-  letter-spacing: 0.01em;
+    color: #757575;
+  }
 
-  color: #757575;
-}
+  &__input,
+  &__comment {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.form-label-policy {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.7;
+  &__input:focus,
+  &__comment:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+  }
 
-  letter-spacing: 0.03em;
+  &__icons {
+    position: relative;
+  }
 
-  color: #757575;
-}
+  &__svg {
+    position: absolute;
+    left: 12px;
+    bottom: 50%;
+    transform: translateY(50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.form-input,
-.form-comment {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:focus,
-.form-comment:focus {
-  outline: none;
-  border-color: var(--secondary-color);
-}
-
-.modal-svg {
-  position: relative;
-}
-
-.form-field-svg {
-  position: absolute;
-  left: 12px;
-  bottom: 50%;
-  transform: translateY(50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-input:focus + .form-field-svg {
-  fill: var(--secondary-color);
-}
-
-.form-checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
+  &__input:focus + &__svg {
+    fill: var(--secondary-color);
+  }
 }
 
 .form-policy {
   display: flex;
   justify-content: center;
-}
 
-.policy-icon {
-  display: inline-block;
-  margin-right: 8px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  &__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
 
-.form-checkbox:focus + .policy-icon {
-  box-shadow: 0 0 0 2px var(--secondary-color);
-}
+  &__label {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.7;
 
-.form-checkbox:checked + .policy-icon {
-  background-color: var(--secondary-color);
-  fill: var(--secondary-color);
-  background-image: url(../image/svg/icon-check.svg);
-  background-position: center;
-  border-radius: 2px;
-  box-shadow: none;
+    letter-spacing: 0.03em;
+
+    color: #757575;
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-right: 8px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__checkbox:focus + &__icon {
+    box-shadow: 0 0 0 2px var(--secondary-color);
+  }
+
+  &__checkbox:checked + &__icon {
+    background-color: var(--secondary-color);
+    fill: var(--secondary-color);
+    background-image: url(../image/svg/icon-check.svg);
+    background-position: center;
+    border-radius: 2px;
+    box-shadow: none;
+  }
 }
 
 .modal-button {
@@ -206,9 +202,9 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.modal-button:hover,
-.modal-button:focus {
-  background-color: #188ce8;
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
 }
